@@ -25,18 +25,18 @@ export default async function main(game) {
     }
   };
 
-  //   setInterval(async () => {
-  //     const canvas = game.app.renderer.extract.canvas(game.stage);
-  //     const bitmap = await createImageBitmap(canvas);
+  setInterval(async () => {
+    const canvas = game.app.renderer.extract.canvas(game.stage);
+    const bitmap = await createImageBitmap(canvas);
 
-  //     worker.postMessage(
-  //       {
-  //         type: "predict",
-  //         image: bitmap,
-  //       },
-  //       [bitmap],
-  //     );
-  //   }, 200); // every 200ms
+    worker.postMessage(
+      {
+        type: "predict",
+        image: bitmap,
+      },
+      [bitmap],
+    );
+  }, 200); // every 200ms
 
   return container;
 }
